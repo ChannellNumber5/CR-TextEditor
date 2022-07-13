@@ -32,9 +32,7 @@ module.exports = () => {
       rules: [
         {
           test:/\.css$/i,
-          use:{
-            loader: "css-loader",
-          },
+          use:['style-loader','css-loader'],
         },
         {
           test:/\.m?js$/,
@@ -43,6 +41,7 @@ module.exports = () => {
             loader:"babel-loader",
             options: {
               presets: ["@babel/preset-env"],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'] //object rest spread should be included in preset-env. but the transfrom runtime is to allow babel to reuse its helpers info here -> https://babeljs.io/docs/en/babel-plugin-transform-runtime
             }
           }
         },
