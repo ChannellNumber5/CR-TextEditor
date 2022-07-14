@@ -35,8 +35,8 @@ module.exports = () => {
         description:'Save your coding text snippets',
         background_color: '#008080',
         theme_color:'#008080',
-        start_url: '/',
-        publicPath: '/',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('./src/images/logo.png'),
